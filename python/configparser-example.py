@@ -1,5 +1,8 @@
-import ConfigParser
+#!/usr/bin/env python
+# Works in both python 2 and 3
+import configparser
 import sys
+import os
 
 
 # Create a config in ~/.WHATEVERCONFIG.conf with the following contents:
@@ -10,7 +13,7 @@ import sys
 # zone = SOMECITYMAYBE
 
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(os.path.expanduser('~/.WHATEVERCONFIG.conf'))
 
 sshkeylocation = config.get('ssh','keyname')
